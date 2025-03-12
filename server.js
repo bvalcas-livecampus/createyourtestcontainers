@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const logger = require('@local/simply-logger');
+const { EmojisKeys } = require('@local/simply-logger/dist/types');
 const notesRoutes = require('./routes/notes');
 
 const app = express();
@@ -12,5 +13,5 @@ app.use('/notes', notesRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    logger.info(`🚀 Server started on http://localhost:${PORT}`);
+    logger.info(`Server started on http://localhost:${PORT}`, EmojisKeys.SUCCESS);
 });
