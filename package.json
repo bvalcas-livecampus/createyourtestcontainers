@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@local/simply-logger": "file:~/Documents/Github/simply-logger",
+    "@local/simply-logger": "git+https://github.com/ValcasaraBryan/simply-logger.git",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
