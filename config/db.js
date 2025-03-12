@@ -11,8 +11,9 @@ const pool = new Pool({
 });
 
 pool.connect((err, client, done) => {
+  
   if (err) {
-    logger.error('❌ Error connecting to database:', err);
+    logger.error(`❌ Error connecting to database: ${err}`);
   } else {
     logger.info(`✅ Successfully connected to database at ${process.env.DB_HOST}:${process.env.DB_PORT}`);
   }
