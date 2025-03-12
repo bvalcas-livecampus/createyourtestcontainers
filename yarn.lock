@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@local/simply-logger@file:~/Documents/Github/log":
+"@local/simply-logger@file:~/Documents/Github/simply-logger":
   version "1.0.0"
-  resolved "file:../../Github/log"
+  resolved "file:../../Github/simply-logger"
   dependencies:
     jest "^29.7.0"
 
