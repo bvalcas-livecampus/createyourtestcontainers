@@ -513,7 +513,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@local/simply-logger@git+https://github.com/ValcasaraBryan/simply-logger.git":
+"@local/simply-logger@git+https://github.com/ValcasaraBryan/simply-logger.git#latest":
   version "1.0.0"
   resolved "git+ssh://git@github.com/ValcasaraBryan/simply-logger.git#abe44c74291683c4382fcf5bb189375283d3214a"
   dependencies:
