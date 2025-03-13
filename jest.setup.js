@@ -43,5 +43,12 @@ afterAll(async () => {
     }
 }, 30000);
 
+
+test('pool should be an instance of pg.Pool', () => {
+    const { Pool } = require('pg');
+    logger.info('Verifying pool is instance of pg.Pool');
+    expect(pool).toBeInstanceOf(Pool);
+});
+
 // Export the pool so it can be used in test files
-module.exports = { pool }; 
+module.exports = pool;
