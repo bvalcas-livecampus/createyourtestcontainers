@@ -11,13 +11,28 @@ const pool = new Pool({
   port: process.env.DB_PORT
 });
 
-pool.connect((err, client, done) => {
-  
+const connect = async () => new Promise((resolve, reject) => pool.connect((err, client, done) => {
   if (err) {
     logger.error(`Error connecting to database: ${err}`);
+    reject(err);
   } else {
     logger.info(`Successfully connected to database at ${process.env.DB_HOST}:${process.env.DB_PORT}`, EmojisKeys.SUCCESS);
+    resolve();
   }
-});
+}));
 
-module.exports = pool;
+const close = async () => new Promise((resolve, reject) => pool.end((err) => {
+  if (err) {
+    logger.error(`Error closing database connection: ${err}`);
+    reject(err);
+  } else {
+    logger.info('Database connection closed', EmojisKeys.SUCCESS);
+    resolve();
+  }
+}));
+
+module.exports = {
+  default: pool,
+  connect,
+  close
+};
